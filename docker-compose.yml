@@ -1,6 +1,6 @@
 services:
   network-tools:
-    image: duyle95/network-tools:latest
+    image: network-tools:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,15 +14,3 @@ services:
     read_only: true
     tmpfs:
       - /tmp
-    # Attach to external networks of the stack you want to debug.
-    # Example: docker compose -p myapp up  → network name is "myapp_default"
-    networks:
-      - default
-
-# To debug another compose stack's network, declare it as external:
-# networks:
-#   myapp_default:
-#     external: true
-
-networks:
-  default: {}
